@@ -1,0 +1,41 @@
+TASK: 'AU'
+OUT_DIR: '/mnt/Work/Dataset/Affwild2_ABAW3/train_logs/tmp'
+DATA_LOADER:
+  DATA_DIR: '/home/hvthong/sXProject/Affwild2_ABAW3/dataset/'
+  SEQ_LEN: 64
+  IMG_SIZE: 112
+  NUM_WORKERS: 8
+MODEL:
+  BACKBONE: 'regnet-400mf'    # regnet-400mf, regnet-800mf, regnet-1.6gf, regnet-3.2gf, vggface2-senet50, vggface2-resnet50, regnet, facex.MobileFaceNet, facex.EfficientNets-B0,
+  BACKBONE_FREEZE: ['block4', 'block3', 'block2']  # 'block4'
+  BACKBONE_PRETRAINED: '' # '/mnt/Work/Dataset/Affwild2_ABAW3/train_logs/tmp/AU/2022-02-12_15-20-33/checkpoints/epoch=11-step=4775.ckpt' # '/mnt/Work/Dataset/Affwild2_ABAW3/train_logs/tmp/AU/2022-02-12_09-46-18/checkpoints/epoch=14-step=19919.ckpt' # '/mnt/Work/Dataset/Affwild2_ABAW3/train_logs/tmp/AU/2022-02-12_00-18-42/checkpoints/epoch=12-step=5173.ckpt'
+  FREEZE_BATCHNORM: True
+TRANF:
+  NUM_ENC_DEC: 3
+  NHEAD: 8
+  DIM_FC: 1024
+  DROPOUT: 0.3
+
+TRAIN:
+  BATCH_SIZE: 64
+  MIXED_PRECISION: True
+  LABEL_SMOOTHING: 0.1
+  LOSS_WEIGHTS: False
+  LIMIT_TRAIN_BATCHES: 1.
+TEST:
+  BATCH_SIZE: 64
+OPTIM:
+  NAME: 'adam'
+  LR_POLICY: 'reducelrMetric'  # reducelrMetric
+  BASE_LR: 0.0005
+  MIN_LR: 0.
+  MOMENTUM: 0.9
+  DAMPENING: 0.
+  WEIGHT_DECAY: 5e-5
+  WARMUP_FACTOR: 0.1
+  USE_SWA: False
+  MAX_EPOCH: 10
+  WARMUP_EPOCHS: 5
+  FOCAL_ALPHA: 0.75
+  FOCAL_GAMMA: 2.0
+LOGGER: 'TensorBoard'  # TensorBoard, or wandb
