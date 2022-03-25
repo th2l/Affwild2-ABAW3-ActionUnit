@@ -8,7 +8,7 @@ DATA_LOADER:
 MODEL:
   BACKBONE: 'regnet-400mf'    # regnet-400mf, regnet-800mf, regnet-1.6gf, regnet-3.2gf, vggface2-senet50, vggface2-resnet50, regnet, facex.MobileFaceNet, facex.EfficientNets-B0,
   BACKBONE_FREEZE: ['block4', 'block3', 'block2']  # 'block4'
-  BACKBONE_PRETRAINED: '' # '/mnt/Work/Dataset/Affwild2_ABAW3/train_logs/tmp/AU/2022-02-12_15-20-33/checkpoints/epoch=11-step=4775.ckpt' # '/mnt/Work/Dataset/Affwild2_ABAW3/train_logs/tmp/AU/2022-02-12_09-46-18/checkpoints/epoch=14-step=19919.ckpt' # '/mnt/Work/Dataset/Affwild2_ABAW3/train_logs/tmp/AU/2022-02-12_00-18-42/checkpoints/epoch=12-step=5173.ckpt'
+  BACKBONE_PRETRAINED: ''
   FREEZE_BATCHNORM: True
 TRANF:
   NUM_ENC_DEC: 3
