@@ -1,6 +1,6 @@
 
 
-:3rd_place_medal: Affwild2-ABAW3 @ CVPRW 2022 - Action Unit Detection - PRL
+:3rd_place_medal: [Affwild2-ABAW3 @ CVPRW 2022](https://ibug.doc.ic.ac.uk/resources/cvpr-2022-3rd-abaw/) - Action Unit Detection - PRL
 
 How to run?
 1. Install Docker / Create a python environment using conda or other tools.
